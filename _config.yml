@@ -11,6 +11,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - model_instructions
   - pytest.ini
   - scripts
   - tests
