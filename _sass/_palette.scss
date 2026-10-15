@@ -1,0 +1,33 @@
+@use "sass:map";
+// Colours and fonts for the whole site. Nothing else holds a hex code or
+// a font name; change a value here and every page follows.
+
+// Base
+$colour-bg:        #0B0A0F;   // near-black with a whisper of violet
+$colour-fg:        #FFFFFF;   // the question
+$colour-accent:    #FF00C8;   // links, hover fill
+$colour-on-accent: #000000;   // link text while hovered or focused
+
+// Jewels. Each sits between 5:1 and 12:1 against $colour-bg, so any of
+// them can carry text or a link on its own. Use one at a time next to
+// the pink; two jewels plus pink on one page starts to look like a sweet shop.
+$jewels: (
+  "emerald":  #00D97E,
+  "teal":     #00D1C1,
+  "sapphire": #3D7BFF,
+  "amethyst": #A855F7,
+  "ruby":     #FF2E63,
+  "citrine":  #FFC400,
+);
+$colour-emerald:  map.get($jewels, "emerald");
+$colour-teal:     map.get($jewels, "teal");
+$colour-sapphire: map.get($jewels, "sapphire");
+$colour-amethyst: map.get($jewels, "amethyst");
+$colour-ruby:     map.get($jewels, "ruby");
+$colour-citrine:  map.get($jewels, "citrine");
+
+// Fonts
+$font-display: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+$font-body:    system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+$weight-display: 800;
+$weight-body:    700;

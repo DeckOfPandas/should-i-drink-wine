@@ -1,0 +1,19 @@
+title: Should I drink wine now?
+description: A rigorous decision procedure.
+url: "https://deckofpandas.github.io"
+# The Pages workflow passes --baseurl at build time. Locally the site is at /.
+baseurl: ""
+permalink: pretty
+sass:
+  style: compressed
+exclude:
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - pytest.ini
+  - scripts
+  - tests
+  - tmp
+  - tools
+  - vendor

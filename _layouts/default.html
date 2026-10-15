@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+<main>
+  <h1>{{ page.question }}</h1>
+  {{ content }}
+  <nav>
+  {% for link in page.links %}
+    <a href="{{ link.to | relative_url }}"{% if link.class %} class="{{ link.class }}"{% endif %}>{{ link.label }}</a>
+  {% endfor %}
+  </nav>
+</main>
+</body>
+</html>

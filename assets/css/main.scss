@@ -1,0 +1,68 @@
+---
+---
+@use "palette" as *;
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: $colour-bg;
+  color: $colour-fg;
+  font-family: $font-body;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+main { max-width: 22ch; }
+
+h1 {
+  font-family: $font-display;
+  font-weight: $weight-display;
+  font-size: clamp(2.5rem, 9vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6em;
+}
+
+nav {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+a {
+  color: $colour-accent;
+  font-weight: $weight-body;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  text-decoration: none;
+  border-bottom: 0.12em solid $colour-accent;
+
+  &:hover, &:focus {
+    color: $colour-on-accent;
+    background: $colour-accent;
+    outline: none;
+  }
+}
+
+// Jewels as custom properties, so inline SVG and JS can reach them too.
+:root {
+  --colour-accent: #{$colour-accent};
+  @each $name, $hex in $jewels {
+    --colour-#{$name}: #{$hex};
+  }
+}
+
+// `.jewel-ruby` on a link or heading recolours it. Add it in a page's
+// front matter via `links: - { label, to, class }` if you want it per link.
+@each $name, $hex in $jewels {
+  .jewel-#{$name} { color: $hex; border-color: $hex; }
+  a.jewel-#{$name}:hover, a.jewel-#{$name}:focus { background: $hex; color: $colour-on-accent; }
+}
+
+// Swatch page only.
+.swatches { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 40rem; }
+.swatch { width: 7rem; padding: 1rem 0.5rem; font-size: 1rem; font-weight: $weight-body; border-radius: 0.25rem; color: $colour-on-accent; }

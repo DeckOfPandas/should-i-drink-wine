@@ -1,0 +1,15 @@
+{
+  "name": "should-i-drink-wine (sandboxed)",
+  "initializeCommand": "bash .devcontainer/run.sh --build-only",
+  "image": "should-i-drink-wine-devcontainer",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=should-i-drink-wine-claude-config,target=/state/claude-config,type=volume",
+    "source=should-i-drink-wine-bundle-cache,target=/state/bundle,type=volume"
+  ],
+  "remoteEnv": {
+    "AGENT_GH_TOKEN": "${localEnv:AGENT_GH_TOKEN}"
+  },
+  "updateRemoteUserUID": false
+}

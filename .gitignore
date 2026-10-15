@@ -1,0 +1,10 @@
+tmp/
+.claude/settings.local.json
+.env
+.env.*
+__pycache__/
+.pytest_cache/
+_site
+.claude/worktrees
+.jekyll-cache/
+vendor/
